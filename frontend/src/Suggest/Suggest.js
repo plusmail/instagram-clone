@@ -58,6 +58,7 @@ const Suggest = () => {
     shuffle(suggest); // 새로고침 할 때마다 랜덤으로 돌아감
     suggest.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
 
+
     return (
         <div className={'mainRight'}>
             <div className={'main-right-fixed'}>
@@ -93,7 +94,7 @@ const Suggest = () => {
                     <span>홍보 센터 · </span>
                     <span>API · </span>
                     <span>채용 정보 · </span>
-                    <span>개인정보처리방침 · </span><br/>
+                    <span>개인정보처리방침 · </span>
                     <span>약관 · </span>
                     <span>위치 · </span>
                     <span>언어</span>
