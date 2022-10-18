@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react';
 import './suggestStyle.css'
+import imgLogo from './default_profile.png'
 
 const Suggest = () => {
-    const [members, setMember] = useState([]);
+    const [members, setMember] = useState([]); // mock data의 유저 데이터
+    // const [myId, setMyId] = useState(''); // 백엔드에서 끌고 올 로그인 한 아이
 
     // json 파일로 만든 mock data를 useEffect fetch를 이용하여 끌고와서 useState에 저장
     useEffect(() => {
@@ -12,6 +14,29 @@ const Suggest = () => {
                 setMember(data);
             });
     }, []);
+
+    // useEffect(() => {
+    //     fetch('', {
+    //         method: 'POST'
+    //     })
+    //         .then((res) => (res.json()))
+    //         .then((data) => {
+    //             setMyId(data);
+    //         })
+    // })
+
+
+    // 백엔드에서 로그인한 아이디 가져오기
+    // const signUpId = () => {
+    //     fetch('', {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //             username: id
+    //         }),
+    //     })
+    //         .then((res) => (res.json()))
+    //         .then((result) => console.log('결과:', result));
+    // }
 
     // 원본 배열을 보존하기 위해 전개연산자('...')를 사용
     const suggest = [...members];
@@ -37,11 +62,10 @@ const Suggest = () => {
         <div className={'mainRight'}>
             <div className={'main-right-fixed'}>
                 <div className={'myProfile'}>
-                    <img src={'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MjVfNjQg%2FMDAxNjIxOTI0OTg2ODYx.5UFTEFSvOjo0Og12Gz9QNmPUSQceAMJLLlV-p964g4cg.KAS56VsTKcHgDK1y13Hvh3XgQVe1jKyZV_DI9cC55z0g.JPEG.love10017%2F15.JPG&type=a340'}
+                    <img src={imgLogo}
                          alt={'profile'}/>
                     <div className={'myProfile-text'}>
                         <span className={'my-id'}>qwee_sa</span>
-                        <span>🥒</span>
                     </div>
                     <span className={'follow'}>전환</span>
                 </div>
