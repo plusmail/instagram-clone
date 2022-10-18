@@ -1,0 +1,100 @@
+.story {
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 8px;
+    margin-bottom: 0;
+    margin-top: 16px;
+    padding: 16px 0;
+    width: 468px;
+    height: 85px;
+}
+
+/*스토리지 내용 영역*/
+.storyBox {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    height: 101px;
+    outline: none;
+    position: relative;
+
+    /*세로 스크롤바: 기능 없고 감추기, 가로 스크롤바: 기능 있고 감추기*/
+    overflow: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none; /*ie, edge*/
+    scrollbar-width: none; /* firefox */
+}
+.storyBox::-webkit-scrollbar {
+    display: none; /* chrome, Safari, Opera */
+}
+
+/*스토리 아이템들이 모여있는 박스*/
+.storyItemsBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px;
+}
+.storyItemsBox:nth-child(1) {
+    margin-left: 10px;
+}
+.storyItemsBox:nth-last-child(1) {
+    padding-right: 24px;
+}
+
+.button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 1px 1px 7px #d0d0d0;
+    font-size: 15px;
+}
+
+.button-prev {
+    z-index: 10;
+    top: 35%;
+    left: 10px;
+}
+
+.button-next {
+    z-index: 10;
+    top: 35%;
+    right: 10px;
+}
+
+/*각각 스토리 아이템*/
+.story-item {
+    padding-right: 13px;
+    flex: none;
+    margin-bottom: 10px;
+}
+
+.story-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-image: linear-gradient(45deg, yellow, red, purple);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.story-img img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.story-id {
+    padding-top: 8px;
+    font-size: 12px;
+    color: #262626;
+    text-align: center;
+    cursor: pointer;
+}
