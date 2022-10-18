@@ -1,5 +1,5 @@
 import './storyStyle.css'
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
 const Story = () => {
     const [members, setMember] = useState([]);
@@ -30,12 +30,45 @@ const Story = () => {
         }
     }
 
-    shuffle(userMembers); // 새로고침 할 때마다 랜덤으로 돌아감
+    const carousel = useRef();
+    const [nowX, setNowX] = useState(0);
+
+    useEffect(() => {
+        carousel.current.style.transform = `translateX(${nowX}vw)`;
+    }, [nowX]);
+
+    const prevButton = (e) => {
+        e.preventDefault()
+        if (nowX === 0) { // nowX가 0이면 왼쪽으로 이동하지 않음
+            setNowX(nowX);
+        } else {
+            setNowX((prop) => prop + 7);
+
+        // console.log(`it's work ${nowX}`); // 작동하는지 확인
+        }
+    };
+
+    const nextButton = (e) => {
+        e.preventDefault()
+        if (nowX === -7) {
+            return; // nowX가 -7이면 클릭해도 다음으로 넘어가지 않음
+        } else {
+            setNowX(nowX - 7);
+        }
+        // console.log(`it's work ${nowX}`); // 작동하는지 확인
+    };
+
+
+    shuffle(userMembers); // 새로고침 할 때마다 랜덤으로 돌아감 // 버튼 눌러도 랜덤으로 돌아감 렌더링 막아야하는데 어케하지?
+
+    console.log("userMember->", userMembers);
 
     return (
         <div className={'story'}>
             <div className={'storyBox'}>
-                <div className={'storyItemsBox'}>
+                <button aria-label={"next"} className={"button button-prev"} onClick={prevButton}>&lt;</button>
+                <button aria-label={"next"} className={"button button-next"} onClick={nextButton}>&gt;</button>
+                <div className={'storyItemsBox'} ref={carousel}>
                     {/* eslint-disable-next-line array-callback-return */}
                     {userMembers.map((member) => {
                         if (member.storage === true) {
