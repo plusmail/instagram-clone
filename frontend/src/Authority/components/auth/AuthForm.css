@@ -1,0 +1,92 @@
+.StyledInput {
+  font-size: 0.7rem;
+  border: 1px solid;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  outline: none;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  background: #fafafa;
+  /* &:focus {
+    color: $oc-real-7;
+    border-bottom: 1px solid;
+  }
+  & + & {
+    margin-top: 1rem;
+  } */
+}
+
+.logo-area {
+  display: block;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.AuthFormBlock {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+  padding: 2rem;
+  width: 330px;
+  background: white;
+  border-radius: 2px;
+  border: 1px solid #dbdbdb;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #8e8e8e;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.Button {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.25rem 1rem;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  font-size: 1.125rem;
+
+  /* background: ${palette.gray[8]};
+  &:hover {
+    background: ${palette.gray[6]};
+  } */
+}
+
+.ErrorMessage {
+  color: red;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.Switch {
+  margin-top: 1rem;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+  padding: 0.5rem;
+  width: 330px;
+  background: white;
+  border-radius: 2px;
+  border: 1px solid #dbdbdb;
+
+  /* a {
+      text-decoration: underline;
+      &:hover {
+      }
+    } */
+}
+.blue {
+  color: #3197f6;
+}
