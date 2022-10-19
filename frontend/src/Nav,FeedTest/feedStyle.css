@@ -1,0 +1,10 @@
+.body {
+    margin-top: 16px;
+}
+.feed {
+    width: 470px;
+    height: 509.984px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 8px;
+    margin: 0 -1px 12px -1px;
+}
