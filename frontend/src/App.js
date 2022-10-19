@@ -1,5 +1,3 @@
-import Main from "./Main/Main";
-import Nav from "./Nav,FeedTest/Nav";
 import {Route, Routes} from "react-router-dom";
 // import PostListPage from "./Authority/pages/PostListPage";
 import LoginPage from "./Authority/pages/LoginPage";

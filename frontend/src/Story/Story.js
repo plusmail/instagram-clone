@@ -42,17 +42,17 @@ const Story = () => {
         if (nowX === 0) { // nowX가 0이면 왼쪽으로 이동하지 않음
             setNowX(nowX);
         } else {
-            setNowX((prop) => prop + 7);
+            setNowX((prop) => prop + 5);
             // console.log(`it's work ${nowX}`); // 작동하는지 확인
         }
     };
 
     const nextButton = (e) => {
         e.preventDefault()
-        if (nowX === -7) {
+        if (nowX === -5) {
              // nowX가 -7이면 클릭해도 다음으로 넘어가지 않음
         } else {
-            setNowX(nowX - 7);
+            setNowX(nowX - 5);
         }
         // console.log(`it's work ${nowX}`); // 작동하는지 확인
     };
