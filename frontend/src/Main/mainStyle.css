@@ -1,4 +1,6 @@
 .main {
+    position: relative;
+    top: 51px;
     /*background-color: rgb(250, 250, 250);*/
     /*align-items: stretch;*/
     /*box-sizing: border-box;*/
@@ -36,7 +38,7 @@
 }
 
 .suggest {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 @media (max-width: 1000px) {

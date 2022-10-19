@@ -76,7 +76,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
         ) : (
           <h3>
             계정이 있으신가요?{' '}
-            <Link to="/login">
+            <Link to="/">
               <span className="blue">로그인</span>
             </Link>
           </h3>

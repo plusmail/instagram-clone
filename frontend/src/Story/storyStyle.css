@@ -28,20 +28,7 @@
     display: none; /* chrome, Safari, Opera */
 }
 
-/*스토리 아이템들이 모여있는 박스*/
-.storyItemsBox{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 8px;
-}
-.storyItemsBox:nth-child(1) {
-    margin-left: 10px;
-}
-.storyItemsBox:nth-last-child(1) {
-    padding-right: 24px;
-}
-
+/*스토리 좌우 이동 버튼*/
 .button {
     width: 24px;
     height: 24px;
@@ -52,6 +39,8 @@
     cursor: pointer;
     box-shadow: 1px 1px 7px #d0d0d0;
     font-size: 15px;
+    color: white;
+    font-weight: bold;
 }
 
 .button-prev {
@@ -64,6 +53,15 @@
     z-index: 10;
     top: 35%;
     right: 10px;
+}
+
+/*스토리 아이템들이 모여있는 박스*/
+.storyItemsBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
+    transition: transform 0.5s;
 }
 
 /*각각 스토리 아이템*/

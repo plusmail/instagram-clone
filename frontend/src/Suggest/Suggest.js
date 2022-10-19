@@ -99,7 +99,7 @@ const Suggest = () => {
                     <span>위치 · </span>
                     <span>언어</span>
                 </div>
-                <div className={'else'}>
+                <div className={'else2'}>
                     © 2022 INSTAGRAM FROM META
                 </div>
             </div>
