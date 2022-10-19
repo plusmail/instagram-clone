@@ -30,8 +30,8 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           {type === 'register' && (
             <input
               className="StyledInput"
-              autoComplete="name"
-              name="name"
+              autoComplete="uname"
+              name="uname"
               placeholder="성명"
               onChange={onChange}
               value={form.name}
@@ -76,7 +76,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
         ) : (
           <h3>
             계정이 있으신가요?{' '}
-            <Link to="/">
+            <Link to="/login">
               <span className="blue">로그인</span>
             </Link>
           </h3>

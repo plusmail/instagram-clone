@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const UserSchema = new Schema({
   username: String,
+  uname: String,
   hashedPassword: String,
 });
 
