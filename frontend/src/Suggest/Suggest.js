@@ -2,9 +2,9 @@ import {useEffect, useState} from 'react';
 import './suggestStyle.css'
 import imgLogo from './default_profile.png'
 
-const Suggest = () => {
+const Suggest = ({user}) => {
     const [members, setMember] = useState([]); // mock data의 유저 데이터
-    // const [myId, setMyId] = useState(''); // 백엔드에서 끌고 올 로그인 한 아이
+    // const [myId, setMyId] = useState([]); // 백엔드에서 끌고 올 로그인 한 아이
 
     // json 파일로 만든 mock data를 useEffect fetch를 이용하여 끌고와서 useState에 저장
     useEffect(() => {
@@ -15,15 +15,15 @@ const Suggest = () => {
             });
     }, []);
 
-    // useEffect(() => {
-    //     fetch('', {
-    //         method: 'POST'
-    //     })
-    //         .then((res) => (res.json()))
-    //         .then((data) => {
-    //             setMyId(data);
-    //         })
+    // fetch('api/auth/login', {
+    //     method: 'GET',
+    //     headers: {
+    //         "username": ""
+    //     }
+    //
     // })
+
+
 
 
     // 백엔드에서 로그인한 아이디 가져오기
@@ -37,6 +37,7 @@ const Suggest = () => {
     //         .then((res) => (res.json()))
     //         .then((result) => console.log('결과:', result));
     // }
+
 
     // 원본 배열을 보존하기 위해 전개연산자('...')를 사용
     const suggest = [...members];
@@ -58,6 +59,7 @@ const Suggest = () => {
     shuffle(suggest); // 새로고침 할 때마다 랜덤으로 돌아감
     suggest.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
 
+    // const follow
 
     return (
         <div className={'mainRight'}>
@@ -66,7 +68,7 @@ const Suggest = () => {
                     <img src={imgLogo}
                          alt={'profile'}/>
                     <div className={'myProfile-text'}>
-                        <span className={'my-id'}>qwee_sa</span>
+                        { user? (<span className={'my-id'}>{user.username}</span>) : (<span className={'my-id'}></span>)}
                     </div>
                     <span className={'follow'}>전환</span>
                 </div>

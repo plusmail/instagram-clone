@@ -1,6 +1,6 @@
 import Story from '../Story/Story';
-import Suggest from '../Suggest/Suggest';
 import './mainStyle.css';
+import SuggestContainer from "../Suggest/SuggestContainer";
 
 function Main() {
   return (
@@ -11,7 +11,7 @@ function Main() {
           {/*Feed 여기에 오면 됩니다!*/}
         </div>
         <div className={'suggest'}>
-          <Suggest />
+          <SuggestContainer />
         </div>
       </div>
     </div>
