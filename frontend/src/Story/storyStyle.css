@@ -45,13 +45,13 @@
 
 .button-prev {
     z-index: 10;
-    top: 35%;
+    top: 33%;
     left: 10px;
 }
 
 .button-next {
     z-index: 10;
-    top: 35%;
+    top: 33%;
     right: 10px;
 }
 
@@ -66,7 +66,7 @@
 
 /*각각 스토리 아이템*/
 .story-item {
-    padding-right: 13px;
+    padding-right: 15px;
     flex: none;
     margin-bottom: 10px;
 }
