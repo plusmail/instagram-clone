@@ -122,7 +122,7 @@
     color: #b5b5b5;
     cursor: pointer;
     margin-top: 25px;
-    word-spacing: -1px;
+    word-spacing: 1px;
 }
 
 .else2 {
