@@ -1,6 +1,6 @@
-import Story from '../Story/Story';
+import Story from '../../Story/Story';
 import './mainStyle.css';
-import SuggestContainer from "../Suggest/SuggestContainer";
+import SuggestContainer from "../../Suggest/SuggestContainer";
 
 function Main() {
   return (

@@ -34,14 +34,16 @@ const Suggest = ({user}) => { // SuggestContainer에서 로그인한 유저의 �
     members.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
 
 
+    // 1000px 이하일 경우 없어짐
     return (
         <div className={'mainRight'}>
             <div className={'main-right-fixed'}>
                 <div className={'myProfile'}>
-                    <img src={imgLogo}
-                         alt={'profile'}/>
+                    <Link to={'user'}>
+                        <img src={imgLogo} alt={'profile'}/>
+                    </Link>
                     <div className={'myProfile-text'}>
-                        { user? (<span className={'my-id'}>{user.username}</span>) : (<span className={'my-id'}></span>)} {/*받아온 user가 있을 때는 username 표시하고 없으면 공백 처리*/}
+                        { user? (<Link to={'user'} className={'my-id'}>{user.username}</Link>) : (<span className={'my-id'}></span>)} {/*받아온 user가 있을 때는 username 표시하고 없으면 공백 처리*/}
                     </div>
                     <span className={'follow'}>전환</span>
                 </div>
@@ -63,7 +65,7 @@ const Suggest = ({user}) => { // SuggestContainer에서 로그인한 유저의 �
                         )
                     })}
                 </div>
-                <div className={'else'}>
+                <div className={'else-nav'}>
                     <span><a href={'https://about.instagram.com/'} target={"_blank"} rel="noopener noreferrer">소개</a> · </span>
                     <span><a href={'https://help.instagram.com/'} target={"_blank"} rel="noopener noreferrer">도움말</a> · </span>
                     <span><a href={'https://about.instagram.com/blog'} target={"_blank"} rel="noopener noreferrer">홍보 센터</a> · </span>
@@ -74,7 +76,7 @@ const Suggest = ({user}) => { // SuggestContainer에서 로그인한 유저의 �
                     <span><a href={'https://www.instagram.com/explore/locations/'} target={"_blank"} rel="noopener noreferrer">위치</a> · </span>
                     <span>언어</span>
                 </div>
-                <div className={'else2'}>
+                <div className={'else-text'}>
                     © 2022 INSTAGRAM FROM META
                 </div>
             </div>

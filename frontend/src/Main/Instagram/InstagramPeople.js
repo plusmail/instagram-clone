@@ -1,5 +1,5 @@
-import HeaderContainer from '../Authority/containers/common/HeaderContainer';
-import People from "../Suggest/People";
+import HeaderContainer from '../../Authority/containers/common/HeaderContainer';
+import People from "../../Suggest/People";
 
 function InstagramPeople() {
     return (

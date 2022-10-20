@@ -21,7 +21,7 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    margin: 10px 17px 10px 0px;
+    margin: 11px 17px 10px 0px;
     cursor: pointer;
 }
 
@@ -63,9 +63,6 @@
     cursor: pointer;
 }
 
-/* 추천 친구 전체틀 */
-/*.suggestion-content {*/
-/*}*/
 
 /* 각 추천 친구 */
 .suggestedUser {
@@ -111,15 +108,16 @@
 
 
 /* 그 외 */
-.else {
+.else-nav {
     font-size: 12px;
     color: #b5b5b5;
     cursor: pointer;
     margin-top: 25px;
     word-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-.else2 {
+.else-text {
     font-size: 12px;
     color: #b5b5b5;
     margin-top: 25px;

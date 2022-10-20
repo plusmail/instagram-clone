@@ -1,5 +1,5 @@
-import Main from './Main';
-import HeaderContainer from '../Authority/containers/common/HeaderContainer';
+import Main from '../Main/Main';
+import HeaderContainer from '../../Authority/containers/common/HeaderContainer';
 
 function Instagram() {
   return (
