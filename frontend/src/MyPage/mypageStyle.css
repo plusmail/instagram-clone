@@ -18,31 +18,123 @@
     align-items: stretch;
     position: relative;
     margin-bottom: 44px;
+    height: 150px;
+}
+
+/* 프로필 박스 이미지 */
+.my-profile-img-box {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 100px 0 70px;
 }
 
 .my-profile-img {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-right: 30px;
 }
 
 .my-profile-img img {
-
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
+/* 프로필 이미지 오른쪽 부분 */
 .my-profile-text {
-
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: stretch;
+    position: relative;
+    flex-shrink: 1;
+    flex-basis: 30px;
+    flex-grow: 2;
 }
 
-.my-profile-text h1 {
-
+.text-name-box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    flex-shrink: 1;
+    height: 40px;
 }
 
-.my-profile-text button {
+.text-name-box h1 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    margin: -5px 0 -6px;
+}
 
+.profile-buttons {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+    margin-left: 20px;
+    height: 30px;
+}
+.profile-button {
+    border: 1px solid rgb(219, 219, 219);
+    color: rgb(38, 38, 38);
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 9px 5px 9px;
+}
+
+.my-profile-icons {
+    margin-left: 13px;
+    margin-top: 3px;
 }
 
 .my-profile-icon {
-
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
+
+.my-profile-blank {
+    margin-bottom: 20px;
+}
+
+.my-profile-else {
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.my-profile-else li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+    margin-right: 40px;
+    font-size: 16px;
+    color: rgb(38, 38, 38);
+}
+
+.my-profile-else span {
+    font-weight: 600;
+}
+
 
 /* 메뉴 버튼 박스 */
 .select {

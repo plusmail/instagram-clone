@@ -6,33 +6,35 @@ import {FaHouseUser} from "react-icons/fa";
 import {AiOutlineCamera} from "react-icons/ai";
 import {BsChevronDown} from "react-icons/bs";
 import '../mypageStyle.css'
-import {useState} from "react";
+import {Link} from "react-router-dom";
 
 const MyPage = ({user}) => {
-    const [click, setClick] = useState(false);
-
-    const onClick = () => {
-
-    }
 
     return (
         <div className={'body'}>
             <div className={'my-box'}>
                 {/* 프로필 박스 */}
                 <div className={'my-profile'}>
-                    <div className={'my-profile-img'}>
-                        <img src={img} alt={'profile'}/>
+                    <div className={'my-profile-img-box'}>
+                        <div className={'my-profile-img'}>
+                            <img src={img} alt={'profile'}/>
+                        </div>
                     </div>
+
                     <section className={'my-profile-text'}>
-                        <div>
+                        <div className={'text-name-box'}>
                             {user ? (<h1>{user.username}</h1>) : (<h1>응답없음</h1>)}
-                            <button>프로필 편집</button>
-                            <BsGearWide className={'my-profile-icon'}/>
+                            <div className={'profile-buttons'}>
+                                <span className={'profile-button'}>프로필 편집</span>
+                            </div>
+                            <div className={'my-profile-icons'}>
+                                <BsGearWide className={'my-profile-icon'}/>
+                            </div>
                         </div>
                         <div>
-                            <div></div>
+                            <div className={'my-profile-blank'}></div>
                         </div>
-                        <ul>
+                        <ul className={'my-profile-else'}>
                             <li>게시물 <span>0</span></li>
                             <li>팔로워 <span>0</span></li>
                             <li>팔로우 <span>0</span></li>
@@ -42,9 +44,9 @@ const MyPage = ({user}) => {
 
                 {/* 메뉴 버튼 박스 */}
                 <div className={'select'}>
-                    <a href={'/user'} className={'click'}><BsGrid3X3/>&nbsp; 게시물</a>
-                    <a href={'/user/save'}><RiBookmarkLine/>&nbsp; 저장됨</a>
-                    <a href={'/user/tag'}><FaHouseUser/>&nbsp; 태그됨</a>
+                    <Link to={'/user'} className={'click'}><BsGrid3X3/>&nbsp; 게시물</Link>
+                    <Link to={'/user/save'}><RiBookmarkLine/>&nbsp; 저장됨</Link>
+                    <Link to={'/user/tag'}><FaHouseUser/>&nbsp; 태그됨</Link>
                 </div>
 
                 {/* 게시물 박스 */}
