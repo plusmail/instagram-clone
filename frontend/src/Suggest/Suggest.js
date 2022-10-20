@@ -1,22 +1,20 @@
 import {useEffect, useState} from 'react';
 import './suggestStyle.css'
 import imgLogo from './default_profile.png'
+import {Link} from "react-router-dom";
 
-const Suggest = ({user}) => {
-    const [members, setMember] = useState([]); // mock data의 유저 데이터
+const Suggest = ({user}) => { // SuggestContainer에서 로그인한 유저의 아이디를 user로 받아옴
+    const [members, setMembers] = useState([]); // mock data의 유저 데이터
 
     // json 파일로 만든 mock data를 useEffect fetch를 이용하여 끌고와서 useState에 저장
     useEffect(() => {
         fetch('/data/member.json', {method: 'GET'})
             .then((res) => (res.json()))
             .then((data) => {
-                setMember(data);
+                setMembers(data);
             });
     }, []);
 
-
-    // 원본 배열을 보존하기 위해 전개연산자('...')를 사용
-    const suggest = [...members];
 
     // 피셔-예이츠 셔플(Fisher-Yates shuffle): 무작위로 값을 섞을 때 사용하는 알고리즘 중 가장 대표적인 알고리즘
     function shuffle(array) {
@@ -32,8 +30,8 @@ const Suggest = ({user}) => {
         }
     }
 
-    shuffle(suggest); // 새로고침 할 때마다 랜덤으로 돌아감
-    suggest.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
+    shuffle(members); // 새로고침 할 때마다 랜덤으로 돌아감
+    members.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
 
 
     return (
@@ -43,16 +41,16 @@ const Suggest = ({user}) => {
                     <img src={imgLogo}
                          alt={'profile'}/>
                     <div className={'myProfile-text'}>
-                        { user? (<span className={'my-id'}>{user.username}</span>) : (<span className={'my-id'}></span>)}
+                        { user? (<span className={'my-id'}>{user.username}</span>) : (<span className={'my-id'}></span>)} {/*받아온 user가 있을 때는 username 표시하고 없으면 공백 처리*/}
                     </div>
                     <span className={'follow'}>전환</span>
                 </div>
                 <div className={'suggestion'}>
                     <span className={'left'}>회원님을 위한 추천</span>
-                    <span className={'right'}>모두 보기</span>
+                    <Link to={'/people'} className={'right'}>모두 보기</Link>
                 </div>
                 <div className={'suggestion-content'}>
-                    { suggest.map((member) => {
+                    { members.map((member) => {
                         return (
                             <div className={'suggestedUser'} key={member.id}>
                                 <img src={member.userImg} alt={'profile'}/>
@@ -66,14 +64,14 @@ const Suggest = ({user}) => {
                     })}
                 </div>
                 <div className={'else'}>
-                    <span>소개 · </span>
-                    <span>도움말 · </span>
-                    <span>홍보 센터 · </span>
-                    <span>API · </span>
-                    <span>채용 정보 · </span>
-                    <span>개인정보처리방침 · </span>
-                    <span>약관 · </span>
-                    <span>위치 · </span>
+                    <span><a href={'https://about.instagram.com/'} target={"_blank"} rel="noopener noreferrer">소개</a> · </span>
+                    <span><a href={'https://help.instagram.com/'} target={"_blank"} rel="noopener noreferrer">도움말</a> · </span>
+                    <span><a href={'https://about.instagram.com/blog'} target={"_blank"} rel="noopener noreferrer">홍보 센터</a> · </span>
+                    <span><a href={'https://developers.facebook.com/docs/instagram'} target={"_blank"} rel="noopener noreferrer">API</a> · </span>
+                    <span><a href={'https://about.instagram.com/about-us/careers'} target={"_blank"} rel="noopener noreferrer">채용 정보</a> · </span>
+                    <span><a href={'https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect'} target={"_blank"} rel="noopener noreferrer">개인정보처리방침</a> · </span>
+                    <span><a href={'https://help.instagram.com/581066165581870/?locale=ko_KR'} target={"_blank"} rel="noopener noreferrer">약관</a> · </span>
+                    <span><a href={'https://www.instagram.com/explore/locations/'} target={"_blank"} rel="noopener noreferrer">위치</a> · </span>
                     <span>언어</span>
                 </div>
                 <div className={'else2'}>

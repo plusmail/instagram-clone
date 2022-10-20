@@ -4,6 +4,7 @@ import RegisterPage from './Authority/pages/RegisterPage';
 import WritePage from './Authority/pages/WritePage';
 import PostPage from './Authority/pages/PostPage';
 import Instagram from './Main/Instagram';
+import InstagramPeople from "./Main/InstagramPeople";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path=":postId" element={<PostPage />} />
           <Route path="*" element={<LoginPage />} />
         </Route>
+        <Route path={"/people"} element={<InstagramPeople/>}/>
       </Routes>
     </>
   );
