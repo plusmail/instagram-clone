@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Responsive from './Responsive';
 import Button from './Button';
-
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../../modules/user";
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
@@ -40,20 +41,30 @@ const UserInfo = styled.div`
   margin-right: 1rem;
 `;
 
-const Header = ({ user, onLogout }) => {
+const Header = () => {
+  const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
+  console.log("Header1->", auth);
+  console.log("Header->", auth.username);
+  // if(!user) return;
+  const dispatch = useDispatch();
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <>
-      <HeaderBlock>
-        <Wrapper>
-          <div className="right">
-            <UserInfo>{user.username}</UserInfo>
-            <Button onClick={onLogout} to="login">
-              로그아웃
-            </Button>
-          </div>
-        </Wrapper>
-      </HeaderBlock>
-      <Spacer />
+        <HeaderBlock>
+          <Wrapper>
+            <div className="right">
+
+              <UserInfo>{auth.username}</UserInfo>
+              <Button onClick={onLogout} to="/login">
+                로그아웃
+              </Button>
+            </div>
+          </Wrapper>
+        </HeaderBlock>
+        <Spacer />
     </>
   );
 };
