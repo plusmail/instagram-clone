@@ -48,15 +48,21 @@ const LoginForm = ({ history }) => {
     }
     if (auth) {
       console.log('로그인 성공');
+      console.log(dispatch);
+      console.log('auth1->', auth);
+      console.log('user1->', user);
       dispatch(check());
+      console.log('auth2->', auth);
+      console.log('user2->', user);
     }
-  }, [auth, authError, dispatch]);
+  }, [auth, authError, user, dispatch]);
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      console.log('11111111111111->', user);
       try {
         localStorage.setItem('user', JSON.stringify(user));
+        navigate('/instagram');
       } catch (e) {
         console.log('localStorage is not working');
       }

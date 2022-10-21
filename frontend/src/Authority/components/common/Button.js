@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 const buttonStyle = css`
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.1rem;
   font-weight: bold;
   padding: 0.25rem 1rem;
   color: white;
   outline: none;
   cursor: pointer;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   width: 100%;
   font-size: 1.125rem;
 
