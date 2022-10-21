@@ -53,7 +53,7 @@ const Suggest = ({ user }) => {
                 </div>
                 <div className={'suggestion'}>
                     <span className={'left'}>회원님을 위한 추천</span>
-                    <Link to={'/people'} className={'right'}>모두 보기</Link>
+                    <Link to={'/instagram/people'} className={'right'}>모두 보기</Link>
                 </div>
                 <div className={'suggestion-content'}>
                     { members.map((member) => {
