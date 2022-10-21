@@ -12,8 +12,6 @@ import {useSelector} from "react-redux";
 const MyPage = () => {
   // 로그인 유저 아이디 받아오기
   const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
-  console.log("Header1->", auth);
-  console.log("Header->", auth.username);
 
   return (
     <div className={'body'}>

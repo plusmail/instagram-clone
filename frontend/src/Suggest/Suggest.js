@@ -34,19 +34,9 @@ const Suggest = () => {
     shuffle(members); // 새로고침 할 때마다 랜덤으로 돌아감
     members.splice(0, 18); // 앞에서부터 18개 제거 = 5개만 출력되도록
 
-    const onClick = () => {
-        const btn = document.getElementById('id');
-        if (btn.innerText === '팔로우') {
-            btn.innerText = '팔로잉'
-        } else {
-            btn.innerText = '팔로우'
-        }
-    }
 
     // 로그인 유저 아이디 받아오기
     const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
-    console.log("Header1->", auth);
-    console.log("Header->", auth.username);
 
 
     // 1000px 이하일 경우 없어짐
@@ -75,7 +65,7 @@ const Suggest = () => {
                                     <span className={'user-id'}>{member.userId}</span>
                                     <span>{member.text}</span>
                                 </div>
-                                <span className={'follow'} id={'id'} onClick={onClick}>팔로우</span>
+                                <span className={'follow'} id={'id'}>팔로우</span>
                             </div>
                         )
                     })}
