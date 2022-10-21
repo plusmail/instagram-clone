@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeField, initializeForm, register } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
+import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 // import data from '../../data/data.json';
 
@@ -16,7 +17,7 @@ const RegisterForm = () => {
     user: user.user,
   }));
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // data.map((data) => {
   //   console.log(data.userId);
@@ -86,11 +87,12 @@ const RegisterForm = () => {
     if (user) {
       try {
         localStorage.setItem('user', JSON.stringify(user));
+        navigate('/instagram');
       } catch (e) {
         console.log('localStorage is not working');
       }
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <AuthForm

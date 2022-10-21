@@ -59,7 +59,6 @@ const LoginForm = ({ history }) => {
 
   useEffect(() => {
     if (user) {
-      console.log('11111111111111->', user);
       try {
         localStorage.setItem('user', JSON.stringify(user));
         navigate('/instagram');
