@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import './suggestStyle.css';
 import imgLogo from './default_profile.png';
 import { Link } from 'react-router-dom';
+import {useSelector} from "react-redux";
 
-const Suggest = ({ user }) => {
+const Suggest = () => {
   // SuggestContainer에서 로그인한 유저의 아이디를 user로 받아옴
   const [members, setMembers] = useState([]); // mock data의 유저 데이터
 
@@ -35,8 +36,18 @@ const Suggest = ({ user }) => {
 
     const onClick = () => {
         const btn = document.getElementById('id');
-        btn.innerText = '팔로잉'
+        if (btn.innerText === '팔로우') {
+            btn.innerText = '팔로잉'
+        } else {
+            btn.innerText = '팔로우'
+        }
     }
+
+    // 로그인 유저 아이디 받아오기
+    const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
+    console.log("Header1->", auth);
+    console.log("Header->", auth.username);
+
 
     // 1000px 이하일 경우 없어짐
     return (
@@ -47,7 +58,7 @@ const Suggest = ({ user }) => {
                         <img src={imgLogo} alt={'profile'}/>
                     </Link>
                     <div className={'myProfile-text'}>
-                        { user? (<Link to={'user'} className={'my-id'}>{user.username}</Link>) : (<span className={'my-id'}></span>)} {/*받아온 user가 있을 때는 username 표시하고 없으면 공백 처리*/}
+                        { auth? (<Link to={'user'} className={'my-id'}>{auth.username}</Link>) : (<span className={'my-id'}></span>)} {/*받아온 user가 있을 때는 username 표시하고 없으면 공백 처리*/}
                     </div>
                     <span className={'follow'}>전환</span>
                 </div>
