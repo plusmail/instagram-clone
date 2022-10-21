@@ -213,11 +213,6 @@
     color: #8e8e8e;
 }
 
-/* save 폴더 */
-.text-box span {
-
-}
-
 
 footer {
     display: flex;
@@ -287,6 +282,7 @@ footer {
     line-height: 16px;
     margin: -2px 0 -3px;
     color: #828282;
+    cursor: pointer;
 }
 
 .my-else2 {

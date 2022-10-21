@@ -11,8 +11,6 @@ import {useSelector} from "react-redux";
 const MyPage = () => {
   // 로그인 유저 아이디 받아오기
   const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
-  console.log("Header1->", auth);
-  console.log("Header->", auth.username);
 
   return (
     <div className={'body'}>
@@ -39,33 +37,18 @@ const MyPage = () => {
               <div className={'my-profile-blank'}></div>
             </div>
             <ul className={'my-profile-else'}>
-              <li>
-                게시물 <span>0</span>
-              </li>
-              <li>
-                팔로워 <span>0</span>
-              </li>
-              <li>
-                팔로우 <span>0</span>
-              </li>
+              <li>게시물 <span>0</span></li>
+              <li>팔로워 <span>0</span></li>
+              <li>팔로우 <span>0</span></li>
             </ul>
           </section>
         </div>
 
         {/* 메뉴 버튼 박스 */}
         <div className={'select'}>
-          <Link to={'/instagram/user'}>
-            <BsGrid3X3 />
-            &nbsp; 게시물
-          </Link>
-          <Link to={'/instagram/user/save'} className={'click'}>
-            <RiBookmarkLine />
-            &nbsp; 저장됨
-          </Link>
-          <Link to={'/instagram/user/tag'}>
-            <FaHouseUser />
-            &nbsp; 태그됨
-          </Link>
+          <Link to={'/instagram/user'}><BsGrid3X3 />&nbsp; 게시물</Link>
+          <Link to={'/instagram/user/save'} className={'click'}><RiBookmarkLine />&nbsp; 저장됨</Link>
+          <Link to={'/instagram/user/tag'}><FaHouseUser />&nbsp; 태그됨</Link>
         </div>
 
         {/* 게시물 박스 */}
