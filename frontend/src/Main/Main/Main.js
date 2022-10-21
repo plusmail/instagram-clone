@@ -8,7 +8,7 @@ function Main() {
       <div className={'main-box'}>
         <div className={'left'}>
           <Story />
-          {/*Feed 여기에 오면 됩니다!*/}
+          {/*FeedContainer 여기에 오면 됩니다!*/}
         </div>
         <div className={'suggest'}>
           <SuggestContainer />

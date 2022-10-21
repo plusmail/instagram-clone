@@ -7,8 +7,14 @@ import { AiOutlineCamera } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import '../mypageStyle.css';
 import { Link } from 'react-router-dom';
+import {useSelector} from "react-redux";
 
-const MyPage = ({ user }) => {
+const MyPage = () => {
+  // 로그인 유저 아이디 받아오기
+  const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
+  console.log("Header1->", auth);
+  console.log("Header->", auth.username);
+
   return (
     <div className={'body'}>
       <div className={'my-box'}>
@@ -22,7 +28,7 @@ const MyPage = ({ user }) => {
 
           <section className={'my-profile-text'}>
             <div className={'text-name-box'}>
-              {user ? <h1>{user.username}</h1> : <h1>응답없음</h1>}
+              {auth ? <h1>{auth.username}</h1> : <h1>응답없음</h1>}
               <div className={'profile-buttons'}>
                 <span className={'profile-button'}>프로필 편집</span>
               </div>
