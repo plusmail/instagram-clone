@@ -102,7 +102,7 @@
     font-weight: bold;
     color: white;
     padding-top: 4px;
-    cursor: default;
+    cursor: pointer;
     position: absolute;
     right: 0;
 }
