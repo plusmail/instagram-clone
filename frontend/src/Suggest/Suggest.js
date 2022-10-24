@@ -4,6 +4,7 @@ import imgLogo from './default_profile.png';
 import { Link } from 'react-router-dom';
 import {useSelector} from "react-redux";
 
+
 const Suggest = () => {
   // SuggestContainer에서 로그인한 유저의 아이디를 user로 받아옴
   const [members, setMembers] = useState([]); // mock data의 유저 데이터
@@ -38,7 +39,6 @@ const Suggest = () => {
     // 로그인 유저 아이디 받아오기
     const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
 
-
     // 1000px 이하일 경우 없어짐
     return (
         <div className={'mainRight'}>
@@ -59,14 +59,14 @@ const Suggest = () => {
                 <div className={'suggestion-content'}>
                     { members.map((member) => {
                         return (
-                            <div className={'suggestedUser'} key={member.id}>
-                                <img src={member.userImg} alt={'profile'}/>
-                                <div className={'suggestedUser-text'}>
-                                    <span className={'user-id'}>{member.userId}</span>
-                                    <span>{member.text}</span>
+                                <div className={'suggestedUser'} key={member.id}>
+                                    <img src={member.userImg} alt={'profile'}/>
+                                    <div className={'suggestedUser-text'}>
+                                        <span className={'user-id'}>{member.userId}</span>
+                                        <span>{member.text}</span>
+                                    </div>
+                                    <span className={'follow'} id={'id'}>팔로우</span>
                                 </div>
-                                <span className={'follow'} id={'id'}>팔로우</span>
-                            </div>
                         )
                     })}
                 </div>
