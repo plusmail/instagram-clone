@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Search from "./Search/Search";
 import img from "./img/insta_logo.png";
 import Modal from "./Modal/Modal";
-import Search1 from "./Search/Search1";
 
 class NavBar extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className="navbar__barContent">
-                <Grid container>
+                <div className='container'>
                     <Grid item xs={2}>
                     </Grid>
                     <Grid item xs={3}>
@@ -29,11 +28,11 @@ class NavBar extends Component {
                         </div>
                     </Grid>
                     <Grid item xs={4}>
-                    <div className='grid-container'>
+                    <div className='modal-container'>
                         <Modal/>
                     </div>
                     </Grid>
-                </Grid>
+                </div>
             </div>
         )
     }

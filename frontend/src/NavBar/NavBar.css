@@ -13,10 +13,17 @@
 .Search-container {
     width: 160px;
 }
-.grid-container {
+.Grid-container {
     display: flex;
-    margin-top: 15px;
+    height: 60px;
 }
 .image-11{
     display: flex;
+}
+.container{
+    display: flex;
+    height: 60px;
+}
+.modal-container{
+    margin-top: 15px;
 }
