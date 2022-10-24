@@ -1,0 +1,21 @@
+.Searchbar {
+    margin-top: 20px;
+
+}
+
+.SearchBack {
+    z-index: 30;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+.qwer{
+display: flex;
+    flex-direction: row;
+    width: 25px;
+}
+
+.img {
+    width: 30px;
+}
