@@ -14,14 +14,14 @@
     align-items: center;
     position: relative;
     height: 56px;
-    margin: 20px 0px 15px 0px;
+    margin: 20px 0 15px 0;
 }
 
 .myProfile img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    margin: 11px 17px 10px 0px;
+    margin: 11px 17px 10px 0;
     cursor: pointer;
 }
 
