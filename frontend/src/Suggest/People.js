@@ -38,16 +38,16 @@ const People = () => {
             </div>
             <footer>
                 <div className={'footer-box'}>
-                    <div className={'navs'}>
-                        <span className={'nav'}><a href={'https://about.instagram.com/'} target={"_blank"} rel="noopener noreferrer">소개</a></span>
-                        <span className={'nav'}><a href={'https://help.instagram.com/'} target={"_blank"} rel="noopener noreferrer">도움말</a></span>
-                        <span className={'nav'}><a href={'https://about.instagram.com/blog'} target={"_blank"} rel="noopener noreferrer">홍보 센터</a></span>
-                        <span className={'nav'}><a href={'https://developers.facebook.com/docs/instagram'} target={"_blank"} rel="noopener noreferrer">API</a></span>
-                        <span className={'nav'}><a href={'https://about.instagram.com/about-us/careers'} target={"_blank"} rel="noopener noreferrer">채용 정보</a></span>
-                        <span className={'nav'}><a href={'https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect'} target={"_blank"} rel="noopener noreferrer">개인정보처리방침</a></span><br/><br/>
-                        <span className={'nav'}><a href={'https://help.instagram.com/581066165581870/?locale=ko_KR'} target={"_blank"} rel="noopener noreferrer">약관</a></span>
-                        <span className={'nav'}><a href={'https://www.instagram.com/explore/locations/'} target={"_blank"} rel="noopener noreferrer">위치</a></span>
-                        <span className={'nav'}>언어</span>
+                    <div className={'footer-navs'}>
+                        <span className={'footer-nav'}><a href={'https://about.instagram.com/'} target={"_blank"} rel="noopener noreferrer">소개</a></span>
+                        <span className={'footer-nav'}><a href={'https://help.instagram.com/'} target={"_blank"} rel="noopener noreferrer">도움말</a></span>
+                        <span className={'footer-nav'}><a href={'https://about.instagram.com/blog'} target={"_blank"} rel="noopener noreferrer">홍보 센터</a></span>
+                        <span className={'footer-nav'}><a href={'https://developers.facebook.com/docs/instagram'} target={"_blank"} rel="noopener noreferrer">API</a></span>
+                        <span className={'footer-nav'}><a href={'https://about.instagram.com/about-us/careers'} target={"_blank"} rel="noopener noreferrer">채용 정보</a></span>
+                        <span className={'footer-nav'}><a href={'https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect'} target={"_blank"} rel="noopener noreferrer">개인정보처리방침</a></span><br/><br/>
+                        <span className={'footer-nav'}><a href={'https://help.instagram.com/581066165581870/?locale=ko_KR'} target={"_blank"} rel="noopener noreferrer">약관</a></span>
+                        <span className={'footer-nav'}><a href={'https://www.instagram.com/explore/locations/'} target={"_blank"} rel="noopener noreferrer">위치</a></span>
+                        <span className={'footer-nav'}>언어</span>
                     </div>
                     <div className={'else2'}>
                         © 2022 INSTAGRAM FROM META

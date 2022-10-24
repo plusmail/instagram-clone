@@ -1,0 +1,147 @@
+/* 전체 박스 */
+.user-box {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    position: absolute;
+    width: 400px;
+    height: 340px;
+    box-shadow: 1px 1px 5px #dbdbdb;
+    z-index: 50;
+}
+
+/* 유저 프로필 박스 */
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;
+    border-bottom: 1px solid #dbdbdb
+}
+
+.user-profile-img {
+    margin: 15px 15px 14px 15px;
+}
+
+.user-profile-img img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 유저 프로필 텍스트 */
+.user-profile-text {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;
+}
+
+.user-profile-text-name-box {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.user-profile-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.user-profile-follow {
+    font-size: 15px;
+    color: #8e8e8e;
+    margin-top: 20px;
+}
+
+/* 게시글 팔로워 팔로우 */
+.user-profile-elses {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    position: relative;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.user-profile-else {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.user-profile-else li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+    color: #8e8e8e;
+    font-size: 14px;
+}
+
+.user-profile-else span {
+    padding-left: 15px;
+    color: #262626;
+    font-weight: 600;
+}
+
+/* 게시글 내용 */
+.user-text-box {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    position: relative;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.user-text-box-icons {
+    width: 43px;
+    height: 43px;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 25px auto 5px;
+}
+
+.user-text-box-icon {
+    font-size: 28px;
+    margin: 4px 0 0 4px;
+}
+
+.user-text-box h5 {
+    text-align: center;
+    margin: 0;
+}
+
+.user-text-box p {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+/* 팔로우 버튼 */
+.user-profile-button {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    position: relative;
+    margin: auto auto;
+}
+
+.user-profile-button button {
+    color: white;
+    border: none;
+    background: #0095F6;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 370px;
+    height: 30px;
+}

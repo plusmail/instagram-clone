@@ -127,14 +127,14 @@ footer {
     margin: 0 auto;
 }
 
-.navs {
+.footer-navs {
     display: block;
     margin: 0 auto;
     max-width: 360px;
     vertical-align: baseline;
 }
 
-.nav {
+.footer-nav {
     margin-right: 16px;
     margin-bottom: 7px;
     color: rgb(0,55,107);

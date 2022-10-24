@@ -35,7 +35,7 @@ function Search(props) {
                    className={'searchBar'}
                    onChange={(e) => setValue(e.target.value)}
                    value={value}
-                   placeholder='Search'
+                   placeholder='검색'
             />
             <div className='SearchBack'>
                 {userInfo.map((userInfo, index) => (
