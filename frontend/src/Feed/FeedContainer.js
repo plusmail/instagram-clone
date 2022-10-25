@@ -40,19 +40,24 @@ const FeedContainer = () => {
                 ))}
             </div>
 
-            <form className="feed-Container" onSubmit={addToList}>
-                <div className="Comment-imo">
-                    <RiEmotionHappyLine />
+            <form className="feed-Containers" onSubmit={addToList}>
+                <div className={'feed-Container'}>
+                    <div className="Comment-imos">
+                        <RiEmotionHappyLine className={'comment-imo'}/>
+                    </div>
+                    <input className="Comment-text"
+                           type="text"
+                           value={comment}
+                           placeholder="댓글 달기...."
+                           onChange={getInputValue}
+                    />
+                    <div className={'comment-button'}>
+                        <button disabled={comment.length <= 0} className="Comment-input">
+                            <b>게시</b>
+                        </button>
+                    </div>
+
                 </div>
-                <input className="Comment-text"
-                    type="text"
-                    value={comment}
-                    placeholder="댓글달기...."
-                    onChange={getInputValue}
-                />
-                <button disabled={comment.length <= 0} className="Comment-input">
-                    <b>게시</b>
-                </button>
             </form>
         </div>
     )

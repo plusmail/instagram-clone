@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './MainFeed.css';
-import { BsHeart, BsChat } from 'react-icons/bs'
-import { IoPaperPlaneOutline } from "react-icons/io5";
-import { VscEllipsis } from "react-icons/vsc";
-import { BiBookmark } from "react-icons/bi";
+import {BsHeart, BsChat} from 'react-icons/bs'
+import {IoPaperPlaneOutline} from "react-icons/io5";
+import {VscEllipsis} from "react-icons/vsc";
+import {BiBookmark} from "react-icons/bi";
 import FeedContainer from './FeedContainer';
 
 const Main1 = () => {
@@ -15,35 +15,39 @@ const Main1 = () => {
         + " #travelphotography #ig_kyoto #visitjapanjp #雨の日";
 
     return (
-        <div className="main_feed">
-            <div className="feed_name">
-                <div className="profile_box">
-                    <img className="profile_img" src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg" alt='profile' />
+        <div className="main-feed">
+            <div className="feed-name">
+                <div className="profile-box">
+                    <img className="profile-img"
+                         src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg"
+                         alt='profile'/>
                 </div>
-                <span className="feed_name_txt"> iuk_i </span>
-                <p className='feed_menu'><VscEllipsis /></p>
+                <span className="feed-name-txt"> iuk_i </span>
+                <p className='feed-menu'><VscEllipsis/></p>
             </div>
-            <div className="border feed_box">
+            <div className="border feed-box">
                 <div className='feed-img-box'>
-                    <img className="feed_img" src="./img/21.jpg" alt='feed_img' />
+                    <img className="feed-img" src="./img/21.jpg" alt='feed-img'/>
                 </div>
-                <div className="feed_content">
-                    <button className='likebt'>
-                        <BsHeart />
-                    </button>
-                    <button className='rebt'>
-                        <BsChat />
-                    </button>
-                    <button className='dmbt'>
-                        <IoPaperPlaneOutline />
-                    </button>
-                    <button className='bookmark'>
-                        <BiBookmark />
-                    </button>
-                    <div className="feed_like">
+                <div className="feed-content">
+                    <div className={'feed-icon'}>
+                        <span className='likebt'>
+                            <BsHeart/>
+                        </span>
+                        <span className='rebt'>
+                            <BsChat/>
+                        </span>
+                        <span className='dmbt'>
+                            <IoPaperPlaneOutline/>
+                        </span>
+                        <span className='bookmark'>
+                            <BiBookmark/>
+                        </span>
+                    </div>
+                    <div className="feed-like">
                         <p><b>좋아요 10개</b></p>
                     </div>
-                    <div className='feed_txt'>
+                    <div className='feed-txt'>
                         <b>iuk_i</b> 일본 여행 가고 싶다~
                     </div>
                     <div className='Hash'>
@@ -56,7 +60,7 @@ const Main1 = () => {
                         6시간 전
                     </div>
                     <div>
-                        <FeedContainer />
+                        <FeedContainer/>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './MainFeed.css';
-import { BsHeart, BsChat } from 'react-icons/bs'
-import { IoPaperPlaneOutline } from "react-icons/io5";
-import { VscEllipsis } from "react-icons/vsc";
-import { BiBookmark } from "react-icons/bi";
+import {BsHeart, BsChat} from 'react-icons/bs'
+import {IoPaperPlaneOutline} from "react-icons/io5";
+import {VscEllipsis} from "react-icons/vsc";
+import {BiBookmark} from "react-icons/bi";
 import FeedContainer from './FeedContainer';
 
 const Main3 = () => {
@@ -15,37 +15,39 @@ const Main3 = () => {
         + " #왕크왕귀 #lovedog #cutedog #반려견";
 
 
-
     return (
-        <div className="main_feed">
-            <div className="feed_name">
-                <div className="profile_box">
-                    <img className="profile_img" src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile' />
+        <div className="main-feed">
+            <div className="feed-name">
+                <div className="profile-box">
+                    <img className="profile-img"
+                         src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile'/>
                 </div>
-                <span className="feed_name_txt"> awzd_qwe </span>
-                <p className='feed_menu'><VscEllipsis /></p>
+                <span className="feed-name-txt"> awzd_qwe </span>
+                <p className='feed-menu'><VscEllipsis/></p>
             </div>
-            <div className="border feed_box">
-            <div className='feed-img-box'>
-                <img className="feed_img" src="./img/23.jpg" alt='feed_img' />
+            <div className="border feed-box">
+                <div className='feed-img-box'>
+                    <img className="feed-img" src="./img/23.jpg" alt='feed-img'/>
                 </div>
-                <div className="feed_content">
-                    <button className='likebt'>
-                        <BsHeart />
-                    </button>
-                    <button className='rebt'>
-                        <BsChat />
-                    </button>
-                    <button className='dmbt'>
-                        <IoPaperPlaneOutline />
-                    </button>
-                    <button className='bookmark'>
-                    <BiBookmark/>
-                    </button>
-                    <div className="feed_like">
+                <div className="feed-content">
+                    <div className={'feed-icon'}>
+                        <span className='likebt'>
+                            <BsHeart/>
+                        </span>
+                        <span className='rebt'>
+                            <BsChat/>
+                        </span>
+                        <span className='dmbt'>
+                            <IoPaperPlaneOutline/>
+                        </span>
+                        <span className='bookmark'>
+                            <BiBookmark/>
+                        </span>
+                    </div>
+                    <div className="feed-like">
                         <p><b>좋아요 10개</b></p>
                     </div>
-                    <div className='feed_txt'>
+                    <div className='feed-txt'>
                         <b>awzd_qwe</b> 시골에서 만난 골든리트리버!
                     </div>
                     <div className='Hash'>
@@ -58,7 +60,7 @@ const Main3 = () => {
                         13시간 전
                     </div>
                     <div>
-                        <FeedContainer />
+                        <FeedContainer/>
                     </div>
                 </div>
             </div>

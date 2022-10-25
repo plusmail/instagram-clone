@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './MainFeed.css';
-import { BsHeart, BsChat } from 'react-icons/bs'
-import { IoPaperPlaneOutline } from "react-icons/io5";
-import { VscEllipsis } from "react-icons/vsc";
-import { BiBookmark } from "react-icons/bi";
+import {BsHeart, BsChat} from 'react-icons/bs'
+import {IoPaperPlaneOutline} from "react-icons/io5";
+import {VscEllipsis} from "react-icons/vsc";
+import {BiBookmark} from "react-icons/bi";
 import FeedContainer from './FeedContainer';
 
 const Main2 = () => {
@@ -15,35 +15,39 @@ const Main2 = () => {
         + " #travelphotography #yulljjang #남산타워 #망원한강공원";
 
     return (
-        <div className="main_feed">
-            <div className="feed_name">
-                <div className="profile_box">
-                    <img className="profile_img" src="https://i.pinimg.com/474x/b4/da/8a/b4da8a5c4cd58edfe459fc158bff7585--hello-kitty.jpg" alt='profile' />
+        <div className="main-feed">
+            <div className="feed-name">
+                <div className="profile-box">
+                    <img className="profile-img"
+                         src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg"
+                         alt='profile'/>
                 </div>
-                <span className="feed_name_txt"> wexi_ku </span>
-                <p className='feed_menu'><VscEllipsis /></p>
+                <span className="feed-name-txt"> wexi_ku </span>
+                <p className='feed-menu'><VscEllipsis/></p>
             </div>
-            <div className="border feed_box">
-            <div className='feed-img-box'>
-                <img className="feed_img" src="./img/22.jpg" alt='feed_img' />
+            <div className="border feed-box">
+                <div className='feed-img-box'>
+                    <img className="feed-img" src="./img/22.jpg" alt='feed-img'/>
                 </div>
-                <div className="feed_content">
-                    <button className='likebt'>
-                        <BsHeart />
-                    </button>
-                    <button className='rebt'>
-                        <BsChat />
-                    </button>
-                    <button className='dmbt'>
-                        <IoPaperPlaneOutline />
-                    </button>
-                    <button className='bookmark'>
-                    <BiBookmark/>
-                    </button>
-                    <div className="feed_like">
+                <div className="feed-content">
+                    <div className={'feed-icon'}>
+                        <span className='likebt'>
+                            <BsHeart/>
+                        </span>
+                        <span className='rebt'>
+                            <BsChat/>
+                        </span>
+                        <span className='dmbt'>
+                            <IoPaperPlaneOutline/>
+                        </span>
+                        <span className='bookmark'>
+                            <BiBookmark/>
+                        </span>
+                    </div>
+                    <div className="feed-like">
                         <p><b>좋아요 10개</b></p>
                     </div>
-                    <div className='feed_txt'>
+                    <div className='feed-txt'>
                         <b>wexi_ku</b> 서울,여의도한강공원 서울불꽃축제
                         내년 불꽃축제때 여의도 한강공원에 가야하는 이유는
                         이 사진들로 설명하기 충분
@@ -58,7 +62,7 @@ const Main2 = () => {
                         3시간 전
                     </div>
                     <div>
-                        <FeedContainer />
+                        <FeedContainer/>
                     </div>
                 </div>
             </div>
