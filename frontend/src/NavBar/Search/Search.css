@@ -1,21 +1,52 @@
 .Searchbar {
-    margin-top: 20px;
+    margin-top: 15px;
+    width: 300px;
 
+}
+.searchGlass{
+    width: 35px;
+    height: 35px;
+}
+
+#Searchbar-css{
+    border: none;
+    background-color: #efefef;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    border-radius: 10px;
 }
 
 .SearchBack {
-    z-index: 30;
-    background-color: beige;
+    background-color: white;
     display: flex;
     flex-direction: column;
+    width: 200px;
+}
+.Searchbar-line {
 }
 
-.qwer{
+.search-info{
 display: flex;
     flex-direction: row;
-    width: 25px;
+    border-bottom: #dbdbdb solid 1px;
 }
 
 .img {
     width: 30px;
+}
+
+
+.user-profile-img {
+    padding: 5px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.user-id {
+    display: flex;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }

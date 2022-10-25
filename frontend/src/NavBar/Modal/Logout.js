@@ -3,7 +3,7 @@ import {logout} from "../../Authority/modules/user";
 import Log from './Log';
 
 const Header = () => {
-    const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
+    const {auth} = useSelector(({auth}) => ({auth: auth.auth}));
     console.log("Header1->", auth);
     console.log("Header->", auth.username);
     // if(!user) return;
@@ -13,11 +13,11 @@ const Header = () => {
     };
 
     return (
-                    <div>
-                        <Log onClick={onLogout} to="/login">
-                            Log out
-                        </Log>
-                    </div>
+        <div>
+            <Log onClick={onLogout} to="/login">
+                로그아웃
+            </Log>
+        </div>
     );
 };
 
