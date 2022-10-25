@@ -19,7 +19,7 @@ class NavBar extends Component {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={3}>
-                        <Link to={'instagram'}>
+                        <Link to={'/instagram'}>
                             <img className='navbar_logo' src={img} alt='logo' width='100px'  />
                         </Link>
                     </Grid>
