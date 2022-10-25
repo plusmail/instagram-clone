@@ -15,11 +15,11 @@ class NavBar extends Component {
         return (
             <div className="navbar__barContent">
                 <div className='container'>
-                    <Grid item xs={2}>
+                    <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={3}>
                         <a href='http://localhost:3000/instagram'>
-                            <img src={img} alt='logo' width='100px' />
+                            <img className='navbar_logo' src={img} alt='logo' width='100px'  />
                         </a>
                     </Grid>
                     <Grid item xs={3}>
