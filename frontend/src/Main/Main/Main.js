@@ -1,7 +1,9 @@
 import Story from '../../Story/Story';
 import './mainStyle.css';
 import SuggestContainer from "../../Suggest/SuggestContainer";
-import FeedContainer from "../../Nav,FeedTest/FeedContainer";
+import Main1 from "../../Feed/Main1";
+import Main2 from "../../Feed/Main2"
+import Main3 from '../../Feed/Main3';
 
 function Main() {
   return (
@@ -9,8 +11,9 @@ function Main() {
       <div className={'main-box'}>
         <div className={'left'}>
           <Story />
-          {/*FeedContainer 여기에 오면 됩니다!*/}
-          <FeedContainer/>
+          <Main1/>
+          <Main2/>
+          <Main3/>
         </div>
         <div className={'suggest'}>
           <SuggestContainer />
