@@ -5,7 +5,6 @@
 
 .main-right-fixed {
     width: 319px;
-    /*position: fixed;*/ /* fixed하면 스크롤 내릴 때 내려가지 않음!!!!!! */
 }
 
 /* 본인 프로필 */
@@ -70,7 +69,7 @@
     align-items: center;
     position: relative;
     height: 48px;
-    padding: 0px 4px;
+    padding: 0 4px;
 }
 
 .suggestedUser img {

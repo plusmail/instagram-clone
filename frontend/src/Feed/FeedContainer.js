@@ -6,10 +6,11 @@ import { RiEmotionHappyLine } from "react-icons/ri";
 
 
 const FeedContainer = () => {
-    const { user } = useSelector(({ user }) => ({ user: user.user }));
+    // const { user } = useSelector(({ user }) => ({ user: user.user }));
+    const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
     const [comment, setComment] = useState('');
     const [commentList, setCommentList] = useState([]);
-    const userName = user.username
+    // const userName = user.username
     const getInputValue = (e) => {
         setComment(e.target.value);
     };
@@ -18,7 +19,7 @@ const FeedContainer = () => {
         e.preventDefault();
         const id = new Date().getTime();
         const commentValue = comment;
-        setCommentList([...commentList, { id, commentValue, userName }]);
+        setCommentList([...commentList, { id, commentValue, auth }]);
         setComment('');
     };
 
@@ -35,7 +36,7 @@ const FeedContainer = () => {
                         item={comment}
                         key={index}
                         deleteComment={() => deleteComment(comment.id)}
-                        userName={userName}
+                        userName={auth}
                     />
                 ))}
             </div>
