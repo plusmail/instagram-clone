@@ -3,28 +3,29 @@
     height:60px;
     background-color: white;
     border-bottom: 1px solid #dbdbdb;
+    display: flex;
+}
+.logo-container{
+width: 300px;
+    margin-left: 200px;
 }
 .navbar_logo{
     margin-top: 10px;
-    margin-right: 100px;
+    width: 100px;
 }
 .img-control {
     margin-top: 10px;
 }
 .Search-container {
-    width: 160px;
+    width: 500px;
+    margin-left: 120px;
 }
-.Grid-container {
-    display: flex;
-    height: 60px;
-}
+
 .image-11{
     display: flex;
 }
-.container{
-    display: flex;
-    height: 60px;
-}
+
 .modal-container{
-    margin-top: 15px;
+    margin-top: 20px;
+    width: 30%;
 }
