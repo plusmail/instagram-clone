@@ -1,7 +1,12 @@
+.Modal {
+    display: flex;
+
+}
+
 .menu-trigger{
     width: 300px;
     display: flex;
-
+    justify-content: flex-end;
 }
 
 a {
@@ -14,7 +19,7 @@ a {
     overflow: hidden;
     cursor: pointer;
     background-color: #fff;
-    margin-right: 10px;
+    margin-right: 20px;
 
 }
 
@@ -97,3 +102,4 @@ a {
 .DropdownItem-css{
     list-style: none;
 }
+

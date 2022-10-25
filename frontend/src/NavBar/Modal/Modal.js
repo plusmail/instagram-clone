@@ -3,7 +3,7 @@ import user from '../img/profile.svg';
 import './modal.css';
 import home from "../img/home.svg";
 import share from "../img/share.svg";
-import compass from "../img/conpass.png";
+import compass from "../img/compass.png";
 import love from "../img/love.svg";
 import saved from '../img/saved.png'
 import settings from '../img/settings.png'

@@ -13,18 +13,22 @@ class NavBar extends Component {
 
     render() {
         return (
-            <div className="navbar__barContent">
-                <div className='logo-container'>
-                    <Link to={'/instagram'}>
-                        <img className='navbar_logo' src={img} alt='logo' />
-                    </Link>
-                </div>
+            <div className={'navbar'}>
+                <div className="navbar__barContent">
+                    <div className='logo-containers'>
+                        <div className={'logo-container'}>
+                            <Link to={'/instagram'}>
+                                <img className='navbar_logo' src={img} alt='logo' />
+                            </Link>
+                        </div>
+                    </div>
                     <div className='Search-container'>
                         <Search/>
                     </div>
                     <div className='modal-container'>
                         <Modal/>
                     </div>
+                </div>
             </div>
         )
     }
