@@ -7,7 +7,7 @@ function Search() {
 
     useEffect(() => {
         if (value.length > 0) {
-            fetch('/data/member.json').then(
+            fetch('/data/userInfo.json').then(
                 res => res.json()
             ).then(Data => {
                 setUserInfo([]);
@@ -43,7 +43,9 @@ function Search() {
                 <div className='Searchbar-line'>
                     {userInfos.map((userInfo) => (
                         <div className='search-info'>
-                            <img className='user-profile-img' alt='userimg' src={userInfo.user2}/>
+                            <div className='user-profile-imgs'>
+                                <img className='user-profile-img' alt='userimg' src={userInfo.user2}/>
+                            </div>
                             <p className='user-id'> {userInfo.user}</p>
                         </div>
                     ))}
