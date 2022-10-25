@@ -17,13 +17,17 @@ const Main1 = () => {
     return (
         <div className="main-feed">
             <div className="feed-name">
-                <div className="profile-box">
-                    <img className="profile-img"
-                         src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg"
-                         alt='profile'/>
+                <div className={'feed-names'}>
+                    <div className={'feed-name-box'}>
+                        <div className="profile-box">
+                            <img className="profile-img"
+                                 src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg"
+                                 alt='profile'/>
+                        </div>
+                        <span className="feed-name-txt"> iuk_i </span>
+                    </div>
                 </div>
-                <span className="feed-name-txt"> iuk_i </span>
-                <p className='feed-menu'><VscEllipsis/></p>
+                <span className='feed-menu'><VscEllipsis/></span>
             </div>
             <div className="border feed-box">
                 <div className='feed-img-box'>

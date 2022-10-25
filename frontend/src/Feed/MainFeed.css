@@ -1,10 +1,4 @@
-.feed-name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 58px;
-    padding: 8px 4px 8px 8px;
-}
+
 
 .profile-box {
     display: flex;
@@ -24,17 +18,12 @@
     border: 2px solid white;
 }
 
-.feed-name-txt {
-    font-size: 14px;
-    font-weight: bold;
-    margin-right: 400px;
-}
 
 .feed-menu {
-    margin-right: 5px;
     cursor: pointer;
     font-size: 20px;
-
+    display: flex;
+    align-items: center;
 }
 
 .main-feed {
@@ -61,17 +50,38 @@
 }
 
 .feed-name {
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     height: 58px;
+    padding: 8px 4px 8px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    align-items: stretch;
+    align-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.feed-names {
+    display: block;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    align-items: stretch;
+    align-content: stretch;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.feed-name-box {
+    display: flex;
 }
 
 .feed-name-txt {
     font-size: 14px;
     font-weight: bold;
-    margin-right: 335px;
+    margin-top: 14px;
+    margin-left: 10px;
 }
 
 .feed-img-box {
@@ -241,7 +251,7 @@
 }
 
 .Delete {
-    /*display: flex;*/
+    margin-left: 10px;
     cursor: pointer;
     color: #8e8e8e;
 }

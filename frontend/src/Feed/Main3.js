@@ -18,12 +18,16 @@ const Main3 = () => {
     return (
         <div className="main-feed">
             <div className="feed-name">
-                <div className="profile-box">
-                    <img className="profile-img"
-                         src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile'/>
+                <div className={'feed-names'}>
+                    <div className={'feed-name-box'}>
+                        <div className="profile-box">
+                            <img className="profile-img"
+                                 src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile'/>
+                        </div>
+                        <span className="feed-name-txt"> awzd_qwe </span>
+                    </div>
                 </div>
-                <span className="feed-name-txt"> awzd_qwe </span>
-                <p className='feed-menu'><VscEllipsis/></p>
+                <span className='feed-menu'><VscEllipsis/></span>
             </div>
             <div className="border feed-box">
                 <div className='feed-img-box'>
