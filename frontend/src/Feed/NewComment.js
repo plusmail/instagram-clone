@@ -13,10 +13,6 @@ const NewComment = ({ item: { commentValue }, userName, deleteComment }) => {
         setStyle({display: 'none'});
     }
 
-    const onClick = () => {
-
-    }
-
     return (
         <div className="comment_list"  onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <div className="idAndComments">

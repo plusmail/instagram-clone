@@ -10,7 +10,7 @@ const FeedContainer = () => {
     const { auth } = useSelector(({ auth }) => ({ auth: auth.auth }));
     const [comment, setComment] = useState('');
     const [commentList, setCommentList] = useState([]);
-    // const userName = user.username
+    const userName = auth.username
     const getInputValue = (e) => {
         setComment(e.target.value);
     };
@@ -27,7 +27,6 @@ const FeedContainer = () => {
         setCommentList(commentList.filter(comment => comment.id !== idVal));
     };
 
-
     return (
         <div>
             <div>
@@ -36,7 +35,7 @@ const FeedContainer = () => {
                         item={comment}
                         key={index}
                         deleteComment={() => deleteComment(comment.id)}
-                        userName={auth}
+                        userName={userName}
                     />
                 ))}
             </div>
