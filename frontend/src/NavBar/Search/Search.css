@@ -11,10 +11,12 @@
 #Searchbar-css{
     border: none;
     background-color: #efefef;
-    width: 200px;
-    height: 30px;
+    width: 268px;
+    height: 36px;
     display: flex;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding: 0 16px;
+    font-size: 15px;
 }
 
 .SearchBack {
@@ -27,7 +29,7 @@
 }
 
 .search-info{
-display: flex;
+    display: flex;
     flex-direction: row;
     border-bottom: #dbdbdb solid 1px;
 }
