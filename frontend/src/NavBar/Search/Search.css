@@ -8,6 +8,22 @@
     height: 35px;
 }
 
+/*.input {*/
+/*    background-repeat: no-repeat;*/
+/*    border: 1px solid #ccc;*/
+/*    padding: 5px 5px;*/
+/*    width: 125px;*/
+/*}*/
+
+input::-webkit-input-placeholder{
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
+    background-size: contain;
+    background-position:  1px center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-indent: 0;
+}
+
 #Searchbar-css{
     border: none;
     background-color: #efefef;
@@ -17,13 +33,22 @@
     border-radius: 5px;
     padding: 0 16px;
     font-size: 15px;
+
 }
+
+@media (max-width: 1000px) {
+    .Searchbar {
+        visibility: hidden;
+    }
+}
+
 
 .SearchBack {
     background-color: white;
     display: flex;
     flex-direction: column;
     width: 200px;
+    margin-top: 5px;
 }
 .Searchbar-line {
 }
