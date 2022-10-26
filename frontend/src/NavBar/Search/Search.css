@@ -16,15 +16,16 @@
 /*}*/
 
 
-input::-webkit-input-placeholder{
-    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
-    background-size: contain;
-    background-position:  1px center;
-    background-repeat: no-repeat;
-    text-align: center;
-    text-indent: 0;
-    padding-right: 150px;
-}
+/*input::-webkit-input-placeholder{*/
+/*    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;*/
+/*    background-size: contain;*/
+/*    background-position:  1px center;*/
+/*    background-repeat: no-repeat;*/
+/*    text-align: center;*/
+/*    text-indent: 0;*/
+/*    padding-right: 150px;*/
+/*}*/
+/* 밑에 댓글 컴포넌트까지 영향을 줘서 주석 처리 했습니다.*/
 
 #Searchbar-css{
     border: none;
