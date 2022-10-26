@@ -15,6 +15,7 @@
 /*    width: 125px;*/
 /*}*/
 
+
 input::-webkit-input-placeholder{
     background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
     background-size: contain;
@@ -22,6 +23,7 @@ input::-webkit-input-placeholder{
     background-repeat: no-repeat;
     text-align: center;
     text-indent: 0;
+    padding-right: 150px;
 }
 
 #Searchbar-css{
@@ -42,46 +44,82 @@ input::-webkit-input-placeholder{
     }
 }
 
+.SearchBacks {
+    display: flex;
+    align-items: stretch;
+    border: 0;
+    border-radius: 6px;
+    background-color: white;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    vertical-align: baseline;
+    width: 375px;
+    margin-top: 11px;
+    box-shadow: 1px 1px 5px #bcbcbc;
+}
 
 .SearchBack {
     background-color: white;
     display: flex;
     flex-direction: column;
-    width: 200px;
-    margin-top: 5px;
+    box-sizing: border-box;
+    width: 375px;
+    /*padding-top: 12px;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: scroll;*/
+    cursor: pointer;
+
 }
-.Searchbar-line {
-}
+
 
 .search-info{
     display: flex;
     flex-direction: row;
-    border-bottom: #dbdbdb solid 1px;
+    /*border-bottom: #dbdbdb solid 1px;*/
+    height: 60px;
 }
 
 .img {
     width: 30px;
 }
 
-
-.user-profile-imgs {
-    padding: 3px;
+.user-profile-img1 {
+    padding: 2px;
     border-radius: 50%;
-    width: 58px;
-    height: 58px;
+    width: 48px;
+    height: 48px;
     background-image: linear-gradient(45deg, yellow, red, purple);
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.user-profile-img2 {
+    padding: 2px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: 7px;
+    margin-left: 7px;
 }
 
 .user-profile-img {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
-.user-id {
+.search-user-id {
     display: flex;
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #262626;
+
 }

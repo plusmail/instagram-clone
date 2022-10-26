@@ -30,6 +30,7 @@ function Search() {
     }, [value])
     console.log(userInfos)
 
+
     return (
         <div className='Searchbar'>
             <input id='Searchbar-css'
@@ -39,16 +40,23 @@ function Search() {
                    value={value}
                    placeholder='검색' />
 
-            <div className='SearchBack'>
-                <div className='Searchbar-line'>
-                    {userInfos.map((userInfo) => (
-                        <div className='search-info'>
-                            <div className='user-profile-imgs'>
-                                <img className='user-profile-img' alt='userimg' src={userInfo.user2}/>
+            <div className={'SearchBacks'}>
+                <div className='SearchBack'>
+                        {userInfos.map((userInfo) => (
+                            <div className='search-info'>
+                                {/*{userInfo.storage === true ? (*/}
+                                {/*    <div className='user-profile-img1'>*/}
+                                {/*        <img className='user-profile-img' alt='userImg' src={userInfo.user2}/>*/}
+                                {/*    </div>)*/}
+                                {/*    : (<div className='user-profile-img2'>*/}
+                                {/*        <img className='user-profile-img' alt='userImg' src={userInfo.user2}/>*/}
+                                {/*    </div>)}*/}
+                                <div className='user-profile-img1'>
+                                    <img className='user-profile-img' alt='userimg' src={userInfo.user2}/>
+                                </div>
+                                <span className='search-user-id'> {userInfo.user}</span>
                             </div>
-                            <p className='user-id'> {userInfo.user}</p>
-                        </div>
-                    ))}
+                        ))}
                 </div>
             </div>
         </div>

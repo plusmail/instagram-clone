@@ -21,7 +21,7 @@ const Main2 = () => {
                     <div className={'feed-name-box'}>
                         <div className="profile-box">
                             <img className="profile-img"
-                                 src="https://i.pinimg.com/originals/16/29/dc/1629dc000aa96e157258650389cf4818.jpg"
+                                 src="https://i.pinimg.com/474x/b4/da/8a/b4da8a5c4cd58edfe459fc158bff7585--hello-kitty.jpg"
                                  alt='profile'/>
                         </div>
                         <span className="feed-name-txt"> wexi_ku </span>

@@ -45,14 +45,19 @@ a {
 }
 
 .dropdown-menu.active{
+    margin-left: 60px;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    border: #d0d0d0 solid 1px;
-    margin-top: 5px;
-    width: 250px;
-    height: 240px;
-    padding: 10px;
+    /*border: #d0d0d0 solid 1px;*/
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #bcbcbc;
+    margin-top: 15px;
+    /*width: 250px;*/
+    /*height: 240px;*/
+    width: 230px;
+    height: 198px;
+    padding: 3px;
 
 }
 
@@ -65,7 +70,8 @@ a {
 
 
 .dropdown-menu li{
-    padding: 10px  0;
+    /*padding: 10px  0;*/
+    padding: 9px 0;
 }
 
 .dropdown-menu  li:hover a{
@@ -79,12 +85,14 @@ a {
 }
 
 .dropdownItem{
-    padding: 10px;
+    /*padding: 10px;*/
+    /*margin-left: 10px;*/
     margin-left: 10px;
 }
 
 .dropdownItem img{
-    max-width: 20px;
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
     opacity: 0.5;
 }
@@ -92,14 +100,20 @@ a {
 .dropdownItem a{
     max-width: 100px;
     margin-left: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(38, 38, 38);
 }
 
 .Log{
     border-top: #dbdbdb solid 1px;
     padding: 10px;
+    font-size: 14px;
 
 }
 .DropdownItem-css{
+    width: 230px;
+    height: 198px;
     list-style: none;
 }
 
