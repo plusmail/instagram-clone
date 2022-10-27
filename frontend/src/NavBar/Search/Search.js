@@ -13,11 +13,12 @@ function Search() {
                 setUserInfo([]);
                 let searchQuery = value.toLowerCase();
                 for (const key in Data) {
-                    let user = Data[key].userId.toLowerCase();
-                    let user2 = Data[key].userImg
-                    if (user.slice(0, searchQuery.length).indexOf(searchQuery) !== -1) {  //찾는문자열이 없으면 -1을 반환하는 indexof를 활
+                    let userId = Data[key].userId.toLowerCase();
+                    let userImg = Data[key].userImg
+                    let storage = Data[key].storage
+                    if (userId.slice(0, searchQuery.length).indexOf(searchQuery) !== -1) {  //찾는문자열이 없으면 -1을 반환하는 indexof를 활
                         setUserInfo(prevResult => {
-                            return [...prevResult, {user, user2}]
+                            return [...prevResult, {userId, userImg, storage}]
                         });
                     }
                 }
@@ -44,17 +45,14 @@ function Search() {
                 <div className='SearchBack'>
                         {userInfos.map((userInfo) => (
                             <div className='search-info'>
-                                {/*{userInfo.storage === true ? (*/}
-                                {/*    <div className='user-profile-img1'>*/}
-                                {/*        <img className='user-profile-img' alt='userImg' src={userInfo.user2}/>*/}
-                                {/*    </div>)*/}
-                                {/*    : (<div className='user-profile-img2'>*/}
-                                {/*        <img className='user-profile-img' alt='userImg' src={userInfo.user2}/>*/}
-                                {/*    </div>)}*/}
-                                <div className='user-profile-img1'>
-                                    <img className='user-profile-img' alt='userimg' src={userInfo.user2}/>
-                                </div>
-                                <span className='search-user-id'> {userInfo.user}</span>
+                                {userInfo.storage === true ? (
+                                    <div className='user-profile-img1'>
+                                        <img className='user-profile-img' alt='userImg' src={userInfo.userImg}/>
+                                    </div>)
+                                    : (<div className='user-profile-img2'>
+                                        <img className='user-profile-img' alt='userImg' src={userInfo.userImg}/>
+                                    </div>)}
+                                <span className='search-user-id'> {userInfo.userId}</span>
                             </div>
                         ))}
                 </div>
