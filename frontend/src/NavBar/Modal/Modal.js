@@ -10,6 +10,7 @@ import settings from '../img/settings.png'
 import plus from '../img/plus.png'
 import change from '../img/change.png'
 import Logout from "./Logout";
+import {Link} from "react-router-dom";
 
 function Modal() {
 
@@ -48,8 +49,8 @@ function Modal() {
 
                 <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
                     <span className='DropdownItem-css'>
-                        <DropdownItem img = {user} text = {"프로필"}/>
-                        <DropdownItem img = {saved} text = {"저장됨"}/>
+                        <Link to={'/instagram/user'}><DropdownItem img = {user} text = {"프로필"}/></Link>
+                        <Link to={'/instagram/user/save'}><DropdownItem img = {saved} text = {"저장됨"}/></Link>
                         <DropdownItem img = {settings} text = {"설정"}/>
                         <DropdownItem img = {change} text = {"계정전환"}/>
                         <div className='Log'>
@@ -70,5 +71,6 @@ function DropdownItem(props){
         </li>
     );
 }
+
 
 export default Modal;
