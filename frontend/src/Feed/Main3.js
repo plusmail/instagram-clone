@@ -1,13 +1,14 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import './MainFeed.css';
-import {BsHeart, BsChat} from 'react-icons/bs'
-import {IoPaperPlaneOutline} from "react-icons/io5";
-import {VscEllipsis} from "react-icons/vsc";
-import {BiBookmark} from "react-icons/bi";
+import { BsHeart, BsHeartFill, BsChat } from 'react-icons/bs'
+import { IoPaperPlaneOutline } from "react-icons/io5";
+import { VscEllipsis } from "react-icons/vsc";
+import { BiBookmark } from "react-icons/bi";
 import FeedContainer from './FeedContainer';
 
 const Main3 = () => {
 
+    const [likeclick, setLikeclick] = useState(true);
     const [showMore, setShowMore] = useState(false);
     const text = "  #골든리트리버 #시골감성 #화창한날 #돌담에서 #멈무 #0629 "
         + " #골댕이 #시골 #시골여행 #주말여행 #여행스타그램 #sunny day"
@@ -22,30 +23,30 @@ const Main3 = () => {
                     <div className={'feed-name-box'}>
                         <div className="profile-box">
                             <img className="profile-img"
-                                 src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile'/>
+                                src={"https://i.pinimg.com/550x/12/2e/ba/122eba7ccd3923c06bcc11307f8147a7.jpg"} alt='profile' />
                         </div>
                         <span className="feed-name-txt"> awzd_qwe </span>
                     </div>
                 </div>
-                <span className='feed-menu'><VscEllipsis/></span>
+                <span className='feed-menu'><VscEllipsis /></span>
             </div>
             <div className="border feed-box">
                 <div className='feed-img-box'>
-                    <img className="feed-img" src="./img/23.jpg" alt='feed-img'/>
+                    <img className="feed-img" src="./img/23.jpg" alt='feed-img' />
                 </div>
                 <div className="feed-content">
                     <div className={'feed-icon'}>
-                        <span className='likebt'>
-                            <BsHeart/>
-                        </span>
+                        <button className='likebt' onClick={() => setLikeclick(!likeclick)}>
+                            {likeclick ? <BsHeart /> : <BsHeartFill className='redheart' />}
+                        </button>
                         <span className='rebt'>
-                            <BsChat/>
+                            <BsChat />
                         </span>
                         <span className='dmbt'>
-                            <IoPaperPlaneOutline/>
+                            <IoPaperPlaneOutline />
                         </span>
                         <span className='bookmark'>
-                            <BiBookmark/>
+                            <BiBookmark />
                         </span>
                     </div>
                     <div className="feed-like">
@@ -64,7 +65,7 @@ const Main3 = () => {
                         13시간 전
                     </div>
                     <div>
-                        <FeedContainer/>
+                        <FeedContainer />
                     </div>
                 </div>
             </div>

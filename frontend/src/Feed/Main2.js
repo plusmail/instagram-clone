@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import './MainFeed.css';
-import {BsHeart, BsChat} from 'react-icons/bs'
+import {BsHeart, BsHeartFill, BsChat} from 'react-icons/bs'
 import {IoPaperPlaneOutline} from "react-icons/io5";
 import {VscEllipsis} from "react-icons/vsc";
 import {BiBookmark} from "react-icons/bi";
@@ -8,6 +8,7 @@ import FeedContainer from './FeedContainer';
 
 const Main2 = () => {
 
+    const [likeclick, setLikeclick] = useState(true);
     const [showMore, setShowMore] = useState(false);
     const text = "#불꽃놀이 #한국감성 #맑은날 #서울세계불꽃축제 #소니 #0313 "
         + " #sel55f18z #서울 #한강공원 # #한강데이트 #Firework"
@@ -35,9 +36,9 @@ const Main2 = () => {
                 </div>
                 <div className="feed-content">
                     <div className={'feed-icon'}>
-                        <span className='likebt'>
-                            <BsHeart/>
-                        </span>
+                        <button className='likebt' onClick={() => setLikeclick(!likeclick)}>
+                            {likeclick ? <BsHeart/> : <BsHeartFill className='redheart'/>}
+                        </button>
                         <span className='rebt'>
                             <BsChat/>
                         </span>
