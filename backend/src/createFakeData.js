@@ -1,4 +1,4 @@
-import Post from './models/post';
+import Post from './models/post.js';
 
 export default function createFakeData() {
   // 0, 1, ... 39 로 이루어진 배열 생성 후 포스트 데이터로 변환
@@ -11,5 +11,5 @@ export default function createFakeData() {
   }));
   Post.insertMany(posts, (err, docs) => {
     console.log(docs);
-  });
+  }).then(r => console.log(r));
 }

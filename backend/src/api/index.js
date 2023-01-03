@@ -1,11 +1,11 @@
-import Router from 'koa-router';
-import posts from './posts';
-import auth from './auth';
+import posts from './posts/index.js';
+import auth from './auth/index.js';
 
-const api = new Router();
+import express from 'express';
+const router = express.Router();
 
-api.use('/posts', posts.routes());
-api.use('/auth', auth.routes());
+router.use('/posts', posts);
+router.use('/auth', auth);
 
 //라우터를 내보냅니다.
-export default api;
+export default router;

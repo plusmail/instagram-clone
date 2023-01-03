@@ -1,12 +1,23 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/user';
+import User from '../models/user.js';
 
-const jwtMiddleware = async (ctx, next) => {
-  const token = ctx.cookies.get('access_token');
+const parseCookies = (cookie = '') =>
+    cookie
+        .split(';')
+        .map(v => v.split('='))
+        .reduce((acc, [k, v]) => {
+          acc[k.trim()] = decodeURIComponent(v);
+          return acc;
+        }, {});
+
+const jwtMiddleware = async (req, res, next) => {
+  const cookies = parseCookies(req.headers.cookie);
+  const token =  cookies.access_token;
+  console.log("cookie->", token);
   if (!token) return next(); // 토큰이 없음
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    ctx.state.user = {
+    res.state.user = {
       _id: decoded._id,
       username: decoded.username,
     };
@@ -16,7 +27,7 @@ const jwtMiddleware = async (ctx, next) => {
     if (decoded.exp - now < 60 * 60 * 24 * 3.5) {
       const user = await User.findById(decoded._id);
       const token = user.generateToken();
-      ctx.cookies.set('access_token', token, {
+      res.cookies('access_token', token, {
         maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
         httpOnly: true,
       });

@@ -1,6 +1,6 @@
-const checkLoggedIn = (ctx, next) => {
-  if (!ctx.state.user) {
-    ctx.status = 401; //Unauthorized
+const checkLoggedIn = (req, res, next) => {
+  if (!req.state.user) {
+    res.status = 401; //Unauthorized
     return;
   }
   return next();

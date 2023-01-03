@@ -1,17 +1,18 @@
-import Router from 'koa-router';
-import * as postsCtrl from './posts.ctrl';
-import checkLoggedIn from '../../lib/checkLoggedIn';
-import * as emailCtrl from '../../lib/email';
+import express from 'express';
+const router = express.Router();
 
-const posts = new Router();
+import * as postsCtrl from './posts.ctrl.js';
+import checkLoggedIn from '../../lib/checkLoggedIn.js';
+import * as emailCtrl from '../../lib/email.js';
 
-posts.get('/', postsCtrl.list);
-posts.post('/send', emailCtrl.send);
-posts.post('/cert', emailCtrl.cert);
-posts.post('/', checkLoggedIn, postsCtrl.write);
-posts.get('/:id', postsCtrl.read);
-posts.delete('/:id', checkLoggedIn, postsCtrl.remove);
-posts.put('/:id', checkLoggedIn, postsCtrl.replace);
-posts.patch('/:id', checkLoggedIn, postsCtrl.update);
 
-export default posts;
+router.get('/', postsCtrl.list);
+router.post('/send', emailCtrl.send);
+router.post('/cert', emailCtrl.cert);
+router.post('/', postsCtrl.write);
+router.get('/:id', postsCtrl.read);
+router.delete('/:id', checkLoggedIn, postsCtrl.remove);
+router.put('/:id', checkLoggedIn, postsCtrl.replace);
+router.patch('/:id', checkLoggedIn, postsCtrl.update);
+
+export default router;

@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import pkg from 'mongoose';
+const { Schema, model, connect ,Types} = pkg;
 
-const { Schema } = mongoose;
 
 const PostSchema = new Schema({
   title: String,
@@ -11,10 +11,10 @@ const PostSchema = new Schema({
     default: Date.now, // 현재 날짜를 기본 값으로 지정
   },
   user: {
-    _id: mongoose.Types.ObjectId,
+    _id: Types.ObjectId,
     username: String,
   },
 });
 
-const Post = mongoose.model('Post', PostSchema);
+const Post = model('Post', PostSchema);
 export default Post;

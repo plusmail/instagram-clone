@@ -2810,6 +2810,11 @@
   "resolved" "https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz"
   "version" "1.0.0"
 
+"auto-reload@^0.1.0":
+  "integrity" "sha512-LjFHUU1KeDh5SIhsv47dzeSTH9ENO0rX4+VB8MdhJu3Aun9av0fSlJEE+WAFUTgbrRwMei/FJA6I833BYejBtA=="
+  "resolved" "https://registry.npmjs.org/auto-reload/-/auto-reload-0.1.0.tgz"
+  "version" "0.1.0"
+
 "autoprefixer@^10.4.11":
   "integrity" "sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.12.tgz"

@@ -1,13 +1,10 @@
-
 //Module
 
-const Koa = require('koa');
-const Router = require('koa-router');
-const app = new Koa();
-const router = new Router();
+import express from 'express';
+const router = express.Router();
 
-const nodemailer = require('nodemailer');
-const bcrypt = require('bcrypt');
+import nodemailer from 'nodemailer';
+import bcrypt from 'bcrypt';
 //Schemas
 // const {modelQuery} = require('../schemas/query')
 // const {COLLECTION_NAME, QUERY} = require('../const/consts');
@@ -27,20 +24,20 @@ const smtpTransport = nodemailer.createTransport({
 });
 
 // 이메일 전송
-export const send = async (ctx, next) => {
-    const reademailaddress = ctx.body.EA;
+export const send = async (req, res, next) => {
+    const reademailaddress = req.body.EA;
 
     const exEA = await modelQuery(QUERY.Findone,COLLECTION_NAME.Company,{ "EA" : reademailaddress },{});
     try {
         // 이메일이 중복됐을 때
         if(exEA) {
-            return ctx.send({ result : 'exist' });
+            return res.send({ result : 'exist' });
         }
         else {
             let authNum = Math.random().toString().substr(2,6);
             const hashAuth = await bcrypt.hash(authNum, 12);
             console.log(authNum);
-            ctx.cookie.set('hashAuth', hashAuth,{
+            res.cookie.set('hashAuth', hashAuth,{
                 maxAge: 300000
             });
             const mailOptions = {
@@ -67,7 +64,7 @@ export const send = async (ctx, next) => {
                     "</div>"+
                     "</div>",
             };
-            await smtpTransport.sendMail(mailOptions, (err, ctx) => {
+            await smtpTransport.sendMail(mailOptions, (err, req) => {
                 if(err) {
                     console.log(err);
                 } else{
@@ -76,29 +73,29 @@ export const send = async (ctx, next) => {
                 smtpTransport.close();
             });
 
-            return ctx.send({ result : 'send' });
+            return res.send({ result : 'send' });
         }
     } catch (err) {
-        ctx.send({ result : 'fail' });
+        res.send({ result : 'fail' });
         console.error(err);
         next(err);
     }
 };
 
 // 이메일 인증
-export const cert = async (ctx, next) => {
-    const CEA = ctx.body.CEA;
-    const hashAuth = ctx.cookies.get(hashAuth);
+export const cert = async (req, res, next) => {
+    const CEA = req.body.CEA;
+    const hashAuth = req.cookies.get(hashAuth);
 
     try {
         if(bcrypt.compareSync(CEA, hashAuth)) {
-            ctx.send({ result : 'success' });
+            res.send({ result : 'success' });
         }
         else {
-            ctx.send({ result : 'fail' });
+            res.send({ result : 'fail' });
         }
     } catch(err) {
-        ctx.send({ result : 'fail' });
+        res.send({ result : 'fail' });
         console.error(err);
         next(err);
     }
