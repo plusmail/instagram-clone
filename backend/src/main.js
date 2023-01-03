@@ -22,15 +22,19 @@ mongoose
   });
 
 import apiRouter from './api/index.js';
+import posts from "./api/posts/index.js";
+import auth from "./api/auth/index.js";
 const app = express();
+
 
 app.use('/',apiRouter);
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }))
-// 라우터 적용 전에 bodyParser 적용
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 app.use(jwtMiddleware);
 
+app.use(posts);
+app.use(auth);
 
 // PORT가 지정되어 있지 않다면 4000을 사용
 const port = PORT || 4000;
