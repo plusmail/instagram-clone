@@ -1,5 +1,8 @@
 import Joi from 'joi';
 import User from '../../models/user';
+const nodemailer = require('nodemailer');
+const emailer = require('../../lib/email');
+const axios = require('axios');
 
 //회원가입
 /*
@@ -34,8 +37,13 @@ export const register = async (ctx) => {
     const user = new User({
       username,
     });
+
+
     await user.setPassword(password); // 비밀번호 설정
     await user.save(); // 데이터베이스에 저장
+
+    // export const localRegister = ({email, username, password}) => axios.post('/posts/send', { email, username, password });
+
 
     //응답할 데이터에서 hashedPassword 필드 제거
     ctx.body = user.serialize();
