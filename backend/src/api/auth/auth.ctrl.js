@@ -12,14 +12,14 @@ import axios from 'axios';
     password: 'mypass123'
  }
  */
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
     // Request Body 검증하기
 
-    // const schema = Joi.object().keys({
-    //   username: Joi.string().alphanum().min(3).max(20).required(),
-    //   // uname: Joi.string().required(),
-    //   password: Joi.string().required(),
-    // });
+    const schema = Joi.object().keys({
+      username: Joi.string().alphanum().min(3).max(20).required(),
+      // uname: Joi.string().required(),
+      password: Joi.string().required(),
+    });
     //
     // console.log("regiser-333333->", req.body);
     // const result = schema.validate(req.body);
@@ -28,11 +28,8 @@ export const register = async (req, res) => {
     //   res.body = result.error;
     //   return;
     // }
-    console.log("regiser-4444444444->", req.body);
     const {username, password} = req.body;
     try {
-        // username이 이미 존재하는지 확인
-        console.log("regiser-22222->", req.body);
         const exists = await User.findOne({
             where: {username: username}
         });
@@ -51,21 +48,12 @@ export const register = async (req, res) => {
 
         await user.setPassword(password); // 비밀번호 설정
         await user.save(); // 데이터베이스에 저장
-
-        // // export const localRegister = ({email, username, password}) => axios.post('/posts/send', { email, username, password });
-        //
-        //
-        // //응답할 데이터에서 hashedPassword 필드 제거
-        // res.body = user.serialize();
-        //
-        const token = user.generateToken();
-        console.log("regiser-233333->", token);
-        res.cookies.set('access_token', token, {
+        const token = await user.generateToken();
+        res.cookie('access_token', token, {
             maxAge: 1000 * 60 * 60 * 24 * 7, //7일
             httpOnly: true,
         });
-        console.log("regiser-111->", token);
-
+        res.status(203).json({"message":"success"});
     } catch (e) {
         res.status(500).json({"message": "error발생"});
     }
@@ -80,35 +68,44 @@ export const register = async (req, res) => {
  }
  */
 export const login = async (req, res, next) => {
-    const {username, password} = req.request.body;
+    const {username, password} = req.body;
 
     //username, password가 없으면 에러 처리
     if (!username || !password) {
-        res.status = 401; //Unauthorized
+        res.status(401).json({"message":"auth fail"}); //Unauthorized
         return;
     }
 
     try {
-        const user = await User.findByUsername(username);
+        const user = await User.findOne({
+                username : username,
+        });
+
         //계정이 존재하지 않으면 에러 처리
         if (!user) {
-            res.status = 401;
+            res.status(401).json({"message":"idnotexits"});
             return;
         }
         const valid = await user.checkPassword(password);
+
+
         //잘못된 비밀번호
         if (!valid) {
-            res.status = 401;
+            res.status(401).json({"message":"passwordfail"});
             return;
         }
         res.body = user.serialize();
         const token = user.generateToken();
-        res.cookies.set('access_token', token, {
+        res.cookie('access_token', token, {
             maxAge: 1000 * 60 * 60 * 24 * 7, //7일
             httpOnly: true,
         });
+        res.status(201).json({"state":"aaaa","authError":null, "auth":user});
+
+        console.log("111111->", token, res.body);
+
     } catch (e) {
-        res.throw(500, e);
+        res.status(500).json({"message":"error"});
     }
 };
 
@@ -117,7 +114,7 @@ export const check = async (req, res, next) => {
     const {user} = req.state;
     if (!user) {
         // 로그인 중 아님
-        res.status = 401; // Unauthorized
+        res.status(401); // Unauthorized
         return;
     }
     res.body = user;
