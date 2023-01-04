@@ -83,7 +83,7 @@ export const login = async (req, res, next) => {
 
         //계정이 존재하지 않으면 에러 처리
         if (!user) {
-            res.status(401).json({"message":"idnotexits"});
+            res.status(401).json({"authError":"idnotexits"});
             return;
         }
         const valid = await user.checkPassword(password);
@@ -91,7 +91,7 @@ export const login = async (req, res, next) => {
 
         //잘못된 비밀번호
         if (!valid) {
-            res.status(401).json({"message":"passwordfail"});
+            res.status(401).json({"authError":"passwordfail"});
             return;
         }
         res.body = user.serialize();
@@ -100,31 +100,35 @@ export const login = async (req, res, next) => {
             maxAge: 1000 * 60 * 60 * 24 * 7, //7일
             httpOnly: true,
         });
-        res.status(201).json({"state":"aaaa","authError":null, "auth":user});
-
-        console.log("111111->", token, res.body);
-
+        res.status(201).json({"authError":null, "auth":user});
+        return;
     } catch (e) {
-        res.status(500).json({"message":"error"});
+        res.status(500);
+        return;
     }
 };
 
 //로그인 상태 확인
 export const check = async (req, res, next) => {
-    const {user} = req.state;
+    const {user} = res.locals;
+    // let user={};
     if (!user) {
         // 로그인 중 아님
-        res.status(401); // Unauthorized
-        return;
+        return res.status(401); // Unauthorized;
     }
-    res.body = user;
+    // res.body = user;
+    return res.status(202).json(user);
 };
 
 //로그아웃
 /*
 Get /api/auth/logout
 */
-export const logout = async (req, res, next) => {
-    res.cookies.set('access_token');
-    res.status = 204; // No Content
+export const logout = async (req, res) => {
+    // res.cookie('access_token');
+    res.clearCookie('access_token');
+    res.locals.user=null;
+    res.status(204).redirect("/login");
+
 };
+

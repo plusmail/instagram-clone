@@ -56,6 +56,7 @@ const initialState = {
 };
 
 const auth = handleActions(
+
   {
     [CHANGE_FIELD]: (state, { payload: { form, key, value } }) =>
       produce(state, (draft) => {
@@ -91,5 +92,6 @@ const auth = handleActions(
   },
   initialState,
 );
+
 
 export default auth;
